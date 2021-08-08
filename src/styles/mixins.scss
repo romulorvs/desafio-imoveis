@@ -1,0 +1,96 @@
+@mixin notDesktop(){ // tablet e mobile
+  @media(max-width: 1024px){
+    @content();
+  }
+}
+
+@mixin notMobile(){ // tablet e desktop
+  @media(min-width: 768px){
+    @content();
+  }
+}
+
+@mixin forDesktop(){
+  @media(min-width: 1025px){
+    @content();
+  }
+}
+
+@mixin forMobile(){
+  @media(max-width: 767px){
+    @content();
+  }
+}
+
+@mixin forTablet(){
+  @media(min-width: 768px) and (max-width: 1024px){
+    @content();
+  }
+}
+
+@mixin container($width: 1080px) {
+  margin: 0 auto;
+  width: 100%;
+  max-width: #{$width + 66px};
+  padding-left: 33px;
+  padding-right: 33px;
+
+  @include forTablet(){
+    max-width: #{$width + 40px};
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include forMobile(){
+    max-width: #{$width + 28px};
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content();
+  }
+  &:focus-visible {
+    @content();
+  }
+}
+
+@mixin button {
+  background-color: white;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 20px;
+  color: var(--primary-color);
+  border: 2px solid transparent;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, fill 0.2s, opacity 0.2s;
+  line-height: 2ch;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin emptyButton {
+  @include button;
+  background-color: transparent;
+  color: white;
+  border-color: white;
+
+  @include hover {
+    border-color: transparent;
+  }
+}
+
+@mixin hideScrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
