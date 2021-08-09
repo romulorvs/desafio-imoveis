@@ -4,7 +4,7 @@ import vivarealLogoSrc from '_assets/vivareallogo.svg'
 export const navLogoProps = {
   zap: {
     href: '/vivareal',
-    src: zapLogoSrc,
+    src: vivarealLogoSrc,
     alt: '/Logo Viva Real',
     width: 32,
     height: 25,
@@ -12,9 +12,9 @@ export const navLogoProps = {
   },
   vivareal: {
     href: '/zap',
-    src: vivarealLogoSrc,
+    src: zapLogoSrc,
     alt: '/Logo Zap',
-    width: 22,
+    width: 32,
     height: 27,
     content: 'Zap',
   },

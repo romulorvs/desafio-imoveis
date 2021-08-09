@@ -1,3 +1,3 @@
-import { Contato } from '_views'
+import { Contact } from '_views'
 
-export default Contato
+export default Contact

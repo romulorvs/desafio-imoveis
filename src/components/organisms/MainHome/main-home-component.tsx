@@ -7,16 +7,19 @@ import styles from './main-home.module.scss'
 function MainHome() {
   return (
     <main className={styles.container}>
-      <Link href="/zap">
-        <a>
-          <BrandCard type="zap" />
-        </a>
-      </Link>
-      <Link href="/vivareal">
-        <a>
-          <BrandCard type="vivareal" />
-        </a>
-      </Link>
+      {/* <h1>Encontre os melhores imóveis do Brasil</h1> */}
+      <section>
+        <Link href="/zap">
+          <a>
+            <BrandCard type="zap" />
+          </a>
+        </Link>
+        <Link href="/vivareal">
+          <a>
+            <BrandCard type="vivareal" />
+          </a>
+        </Link>
+      </section>
     </main>
   )
 }

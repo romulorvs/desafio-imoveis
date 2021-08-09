@@ -6,3 +6,18 @@
 /**
  * CONTENT
  */
+
+.container {
+  height: 76px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  section {
+    @include container(1080px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+}

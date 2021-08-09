@@ -6,3 +6,31 @@
 /**
  * CONTENT
  */
+
+.container {
+  height: 44px;
+  display: flex;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0 16px;
+    border-left: 1px solid #EBEBEB;
+
+    @include forMobile {
+      padding: 0 10px;
+    }
+
+    &:last-child {
+      border-right: 1px solid #EBEBEB;
+
+      @include notDesktop {
+        padding-right: 0;
+        border-right: unset;
+      }
+    }
+  }
+}

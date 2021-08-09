@@ -12,10 +12,10 @@ function BrandCard({ type }: IBrandCard) {
 
   return (
     <section className={styles.container}>
-      <Image src={src} alt={alt} width={150} height={300} priority />
+      <Image src={src} alt={alt} width={300} height={150} priority />
       <article>
         {logoSvg}
-        <ul>
+        <ul className={styles[type]}>
           {featureList.map((content, index) => (
             <li key={index}>{content}</li>
           ))}

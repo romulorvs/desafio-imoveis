@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+
 import Link from 'next/link'
 
 import { ImageLink } from '_components'
@@ -25,8 +26,9 @@ function NavBar({ currentBrand }: INavBar) {
           width={width}
           height={height}
           priority
-        />
-        <span>{content}</span>
+        >
+          <span>{content}</span>
+        </ImageLink>
       </>
     )
   }, [currentBrand])

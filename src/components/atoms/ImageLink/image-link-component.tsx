@@ -3,11 +3,14 @@ import Image from 'next/image'
 
 import { IImageLink } from './image-link-types'
 
-function ImageLink({ href, ...imageProps }: IImageLink) {
+import styles from './image-link.module.scss'
+
+function ImageLink({ href, children, ...imageProps }: IImageLink) {
   return (
     <Link href={href}>
       <a>
         <Image {...imageProps} />
+        {children && <div className={styles.children}>{children}</div>}
       </a>
     </Link>
   )

@@ -11,15 +11,17 @@ function Header({ brand }: IHeader) {
 
   return (
     <header className={styles.container}>
-      <ImageLink
-        href={href}
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        priority
-      />
-      <NavBar currentBrand={brand} />
+      <section>
+        <ImageLink
+          href={href}
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          priority
+        />
+        <NavBar currentBrand={brand} />
+      </section>
     </header>
   )
 }

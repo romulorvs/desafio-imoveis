@@ -51,3 +51,41 @@ export const ZapSVG = (
     />
   </svg>
 )
+
+export const arrowLeft = (
+  <svg viewBox="0 0 27 30" fill="none">
+    <path
+      d="M5.5 12.866C4.83333 12.4811 4.83333 11.5189 5.5 11.134L20.5 2.47372C21.1667 2.08882 22 2.56994 22 3.33974L22 20.6603C22 21.4301 21.1667 21.9112 20.5 21.5263L5.5 12.866Z"
+      fill="white"
+    />
+  </svg>
+)
+
+export const arrowRight = (
+  <svg viewBox="0 0 27 30" fill="none">
+    <path
+      d="M21.5 11.134C22.1667 11.5189 22.1667 12.4811 21.5 12.866L6.5 21.5263C5.83333 21.9112 5 21.4301 5 20.6603L5 3.33975C5 2.56995 5.83334 2.08882 6.5 2.47372L21.5 11.134Z"
+      fill="white"
+    />
+  </svg>
+)
+
+export const paginateArrowLeft = (
+  <svg viewBox="0 0 10 18" fill="none">
+    <path
+      d="M7.42859 2.5L2.07145 8.92857L7.42859 15"
+      strokeWidth="2.85714"
+      strokeLinecap="square"
+    />
+  </svg>
+)
+
+export const paginateArrowRight = (
+  <svg viewBox="0 0 10 18" fill="none">
+    <path
+      d="M2.07141 15L7.42855 8.57143L2.07141 2.5"
+      strokeWidth="2.85714"
+      strokeLinecap="square"
+    />
+  </svg>
+)

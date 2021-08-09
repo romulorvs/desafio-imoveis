@@ -49,6 +49,9 @@
 }
 
 @mixin hover {
+  
+  outline: none;
+
   &:hover {
     @content();
   }
