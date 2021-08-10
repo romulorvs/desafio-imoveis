@@ -1,6 +1,7 @@
 import { VivaRealSVG, ZapSVG } from '_svg'
 
 import zapPicExample from '_assets/zapexample.png'
+
 import vivarealPicExample from '_assets/vivarealexample.png'
 
 export const brandLogoProps = {

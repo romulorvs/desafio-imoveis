@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+
 import { IOptions } from './options-types'
 
 import styles from './options.module.scss'
@@ -17,7 +18,6 @@ function Options({
 
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label>
         <span className={hideLabel ? styles.hide : undefined}>{labelText}</span>
         <select

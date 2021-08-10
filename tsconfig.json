@@ -19,7 +19,6 @@
       "_components": ["src/components/index.tsx"],
       "_helpers": ["src/helpers/index.ts"],
       "_views": ["src/views/index.tsx"],
-      "_types": ["src/types/index.ts"],
       "_svg": ["src/svg/index.tsx"],
       "_assets/*": ["./public/assets/*"]
     }

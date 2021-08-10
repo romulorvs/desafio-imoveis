@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { Stat, AdvertPhotos } from '_components'
 
+import { formatPrice } from '_helpers'
+
 import { IAdvertItem } from './advert-item-types'
 
 import styles from './advert-item.module.scss'
@@ -15,7 +17,7 @@ function AdvertItem({
   images,
   usableAreas,
 }: IAdvertItem) {
-  const adPrice = price
+  const adPrice = formatPrice(price)
 
   return (
     <article className={styles.container}>

@@ -97,7 +97,6 @@ function AdvertPhotos({ images, brand, id }: IAdvertPhotos) {
 
       <div className={styles.index_dots}>
         {images.map((src, index) => (
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
           <button
             key={src}
             type="button"

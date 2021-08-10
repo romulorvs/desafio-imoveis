@@ -1,4 +1,5 @@
 import zapLogoSrc from '_assets/zaplogo.svg'
+
 import vivarealLogoSrc from '_assets/vivareallogo.svg'
 
 export const navLogoProps = {

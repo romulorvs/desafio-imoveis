@@ -9,7 +9,7 @@ function Stat({ type, value, size = 'normal' }: IStat) {
   const { width, height } = statProps[type][size]
 
   return (
-    <div
+    <p
       className={styles.container}
       style={{
         backgroundImage: `url(${src})`,
@@ -18,7 +18,7 @@ function Stat({ type, value, size = 'normal' }: IStat) {
       }}
     >
       <span>{value}</span>
-    </div>
+    </p>
   )
 }
 

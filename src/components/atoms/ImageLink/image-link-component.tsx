@@ -5,11 +5,11 @@ import { IImageLink } from './image-link-types'
 
 import styles from './image-link.module.scss'
 
-function ImageLink({ href, children, ...imageProps }: IImageLink) {
+function ImageLink({ href, children, alt, ...imageProps }: IImageLink) {
   return (
     <Link href={href}>
       <a>
-        <Image {...imageProps} />
+        <Image alt={alt} {...imageProps} />
         {children && <div className={styles.children}>{children}</div>}
       </a>
     </Link>
