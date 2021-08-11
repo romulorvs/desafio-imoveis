@@ -1,32 +1,26 @@
-import { useMemo } from 'react'
-
 import { Stat, PriceStat, Map, Slider } from '_components'
 
 import { formatPrice } from '_helpers'
 
 import { IMainDetails } from './main-details-types'
 
-import { adverts } from './main-details-data'
-
 import styles from './main-details.module.scss'
 
-function MainDetails({ brand, _id }: IMainDetails) {
-  const {
-    bedrooms,
-    usableAreas,
-    bathrooms,
-    parkingSpaces,
-    address,
-    images,
-    pricingInfos: {
-      monthlyCondoFee,
-      yearlyIptu,
-      businessType,
-      price,
-      rentalTotalPrice,
-    },
-  } = useMemo(() => adverts[_id], [_id])
-
+function MainDetails({
+  bedrooms,
+  usableAreas,
+  bathrooms,
+  parkingSpaces,
+  address,
+  images,
+  pricingInfos: {
+    monthlyCondoFee,
+    yearlyIptu,
+    businessType,
+    price,
+    rentalTotalPrice,
+  },
+}: IMainDetails) {
   const adPrice = formatPrice(price)
 
   return (

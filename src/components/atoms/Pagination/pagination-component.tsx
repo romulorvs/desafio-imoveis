@@ -1,4 +1,4 @@
-import { paginateArrowLeft, paginateArrowRight } from '_svg'
+import { paginatearrowLeftSVG, paginatearrowRightSVG } from '_svg'
 
 import { IPagination } from './pagination-types'
 
@@ -24,7 +24,7 @@ function Pagination({ value, onChange, totalPages }: IPagination) {
         disabled={value === 1 || undefined}
         onClick={handleLeftClick}
       >
-        {paginateArrowLeft}
+        {paginatearrowLeftSVG}
       </button>
       <p>
         {value} <span>/ {totalPages}</span>
@@ -34,7 +34,7 @@ function Pagination({ value, onChange, totalPages }: IPagination) {
         disabled={value === totalPages || undefined}
         onClick={handleRightClick}
       >
-        {paginateArrowRight}
+        {paginatearrowRightSVG}
       </button>
     </div>
   )

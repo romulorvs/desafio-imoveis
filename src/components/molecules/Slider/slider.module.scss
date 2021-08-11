@@ -69,6 +69,7 @@
     > div {
       min-width: 450px;
       height: 100%;
+      @include shimmerLoader;
       
       @include forMobile{
         width: 100%;

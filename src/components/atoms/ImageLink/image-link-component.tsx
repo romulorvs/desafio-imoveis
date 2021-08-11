@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { IImageLink } from './image-link-types'
+import { TImageLink } from './image-link-types'
 
 import styles from './image-link.module.scss'
 
-function ImageLink({ href, children, alt, ...imageProps }: IImageLink) {
+function ImageLink({ href, children, alt, ...imageProps }: TImageLink) {
   return (
     <Link href={href}>
       <a>

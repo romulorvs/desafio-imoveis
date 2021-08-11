@@ -4,7 +4,14 @@ import { IMap } from './map-types'
 
 import styles from './map.module.scss'
 
-function Map({ className, city, neighborhood, location: { lon, lat } }: IMap) {
+function Map({
+  className,
+  city,
+  neighborhood,
+  geoLocation: {
+    location: { lon, lat },
+  },
+}: IMap) {
   const address = [neighborhood, city].filter(str => str.trim()).join(', ')
 
   const mapClass = joinClasses(styles.container, className)

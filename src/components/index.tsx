@@ -11,6 +11,7 @@ export { default as AdvertPhotos } from '_components/atoms/AdvertPhotos/advert-p
 export { default as BrandCard } from '_components/molecules/BrandCard/brand-card-component'
 export { default as NavBar } from '_components/molecules/NavBar/nav-bar-component'
 export { default as AdvertItem } from '_components/molecules/AdvertItem/advert-item-component'
+export { default as AdvertItemLoading } from '_components/molecules/AdvertItemLoading/advert-item-loading-component'
 export { default as Map } from '_components/molecules/Map/map-component'
 export { default as Slider } from '_components/molecules/Slider/slider-component'
 

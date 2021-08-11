@@ -7,7 +7,6 @@ import styles from './main-home.module.scss'
 function MainHome() {
   return (
     <main className={styles.container}>
-      {/* <h1>Encontre os melhores imóveis do Brasil</h1> */}
       <section>
         <Link href="/zap">
           <a>

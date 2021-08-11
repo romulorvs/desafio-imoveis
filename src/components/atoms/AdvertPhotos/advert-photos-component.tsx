@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
-import { arrowLeft, arrowRight } from '_svg'
+import { arrowLeftSVG, arrowRightSVG } from '_svg'
 
 import { IAdvertPhotos } from './advert-photos-types'
 
@@ -69,7 +69,7 @@ function AdvertPhotos({ images, brand, id }: IAdvertPhotos) {
         type="button"
         onClick={handleLeftClick}
       >
-        {arrowLeft}
+        {arrowLeftSVG}
       </button>
 
       <Link href={`/${brand}/${id}`}>
@@ -92,7 +92,7 @@ function AdvertPhotos({ images, brand, id }: IAdvertPhotos) {
         type="button"
         onClick={handleRightClick}
       >
-        {arrowRight}
+        {arrowRightSVG}
       </button>
 
       <div className={styles.index_dots}>

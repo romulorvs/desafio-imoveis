@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 import Image from 'next/image'
 
-import { arrowLeft, arrowRight } from '_svg'
+import { arrowLeftSVG, arrowRightSVG } from '_svg'
 
 import { ISlider, IUpdateArrows } from './slider-types'
 
@@ -109,7 +109,7 @@ function Slider({ images }: ISlider) {
         disabled={disableLeftArrow}
         onClick={handleLeftClick}
       >
-        {arrowLeft}
+        {arrowLeftSVG}
       </button>
       <article className={styles.img_container}>
         <section ref={imgContainerRef}>
@@ -131,7 +131,7 @@ function Slider({ images }: ISlider) {
         disabled={disableRightArrow}
         onClick={handleRightClick}
       >
-        {arrowRight}
+        {arrowRightSVG}
       </button>
     </section>
   )

@@ -1,5 +1,5 @@
 import { ImageProps } from 'next/image'
 
-export type IImageLink = ImageProps & {
+export type TImageLink = ImageProps & {
   href: string
 }

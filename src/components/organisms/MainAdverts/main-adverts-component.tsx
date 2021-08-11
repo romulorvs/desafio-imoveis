@@ -1,37 +1,103 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { SelectBar, Options, AdvertItem, Pagination } from '_components'
+import { useRouter } from 'next/router'
 
-import { IMainAdverts, IBusinessTypeIds, ISortIds } from './main-adverts-types'
+import debounce from 'dbouncer'
 
-import { businessTypes, sortValues, adverts } from './main-adverts-data'
+// eslint-disable-next-line prettier/prettier
+import { SelectBar, Options,  AdvertItem,  Pagination,  AdvertItemLoading,} from '_components'
+
+// eslint-disable-next-line prettier/prettier
+import { IMainAdverts, TBusinessTypeIds, TSortIds, TAdverts, IFetchAdvertsData, IGetFetchUrl, IQueryParams } from './main-adverts-types'
+
+import { businessTypes, sortValues } from './main-adverts-data'
 
 import styles from './main-adverts.module.scss'
 
-function MainAdverts({ brand }: IMainAdverts) {
-  const [businessType, setBusinessType] = useState<IBusinessTypeIds>('both')
-  const [sort, setSort] = useState<ISortIds>('default')
-  const [page, setPage] = useState<number>(1)
+const fetchAdvertsDebounce = debounce(400)
 
-  function handleBusinessTypeChange(businessTypeId: IBusinessTypeIds) {
-    setBusinessType(businessTypeId)
+function MainAdverts({ brand }: IMainAdverts) {
+  const [adverts, setAdverts] = useState<TAdverts>([])
+  const [loading, setLoading] = useState(true)
+  const [totalPages, setTotalPages] = useState(0)
+
+  const router = useRouter()
+
+  const {
+    page = '1',
+    bType: businessType = 'both',
+    sort = 'default',
+  } = router.query as unknown as IQueryParams
+
+  const pageNumber = parseInt(page, 10)
+
+  function pushUrl(url: string) {
+    router.push(url, undefined, { scroll: false })
   }
 
-  function handleSortChange(businessTypeId: ISortIds) {
-    setSort(businessTypeId)
+  function getFetchUrl({
+    pageNumber: pageParam,
+    businessType: businessTypeParam,
+    sort: sortParam,
+  }: IGetFetchUrl) {
+    return `/${brand}?sort=${sortParam}&bType=${businessTypeParam}&page=${pageParam}`
+  }
+
+  function handleBusinessTypeChange(businessTypeId: TBusinessTypeIds) {
+    const fetchedUrl = getFetchUrl({
+      pageNumber: 1,
+      businessType: businessTypeId,
+      sort,
+    })
+
+    pushUrl(fetchedUrl)
+  }
+
+  function handleSortChange(sortId: TSortIds) {
+    const fetchedUrl = getFetchUrl({
+      pageNumber: 1,
+      businessType,
+      sort: sortId,
+    })
+
+    pushUrl(fetchedUrl)
   }
 
   function handlePageChange(nextPage: number) {
     if (nextPage < 1) {
-      return setPage(1)
+      nextPage = 1
+    } else if (nextPage > totalPages) {
+      nextPage = totalPages
     }
 
-    if (nextPage > 12) {
-      return setPage(12)
-    }
+    const fetchedUrl = getFetchUrl({
+      pageNumber: nextPage,
+      businessType,
+      sort,
+    })
 
-    setPage(nextPage)
+    pushUrl(fetchedUrl)
   }
+
+  async function fetchAdverts() {
+    const res = await fetch(
+      `/api${getFetchUrl({ pageNumber, businessType, sort })}`
+    )
+
+    const { totalPages: newTotalPages, adverts: newAdverts } =
+      (await res.json()) as IFetchAdvertsData
+
+    setTotalPages(newTotalPages)
+    setAdverts(newAdverts)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    setLoading(true)
+    fetchAdvertsDebounce(fetchAdverts)
+  }, [businessType, sort, page])
+
+  const firstLoading = loading && !adverts.length
 
   return (
     <main className={styles.container}>
@@ -49,14 +115,33 @@ function MainAdverts({ brand }: IMainAdverts) {
         />
       </section>
 
-      <section className={styles.list}>
-        {adverts.map(advert => (
-          <AdvertItem key={advert.id} {...advert} brand={brand} />
-        ))}
-      </section>
+      {firstLoading && (
+        <section className={styles.list}>
+          {new Array(9).fill('').map((t, index) => (
+            <AdvertItemLoading key={index} />
+          ))}
+        </section>
+      )}
+
+      {!firstLoading && (
+        <section className={styles.list}>
+          {adverts.map(advert => (
+            <AdvertItem
+              key={advert.id}
+              {...advert}
+              brand={brand}
+              loading={loading}
+            />
+          ))}
+        </section>
+      )}
 
       <section className={styles.pagination}>
-        <Pagination value={page} onChange={handlePageChange} totalPages={12} />
+        <Pagination
+          value={pageNumber}
+          onChange={handlePageChange}
+          totalPages={totalPages}
+        />
       </section>
     </main>
   )

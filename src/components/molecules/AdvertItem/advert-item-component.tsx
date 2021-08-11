@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { Stat, AdvertPhotos } from '_components'
 
-import { formatPrice } from '_helpers'
+import { formatPrice, joinClasses } from '_helpers'
 
 import { IAdvertItem } from './advert-item-types'
 
@@ -16,11 +16,17 @@ function AdvertItem({
   bedrooms,
   images,
   usableAreas,
+  loading = false,
 }: IAdvertItem) {
   const adPrice = formatPrice(price)
 
+  const advertItemClass = joinClasses(
+    styles.container,
+    loading && styles.loading
+  )
+
   return (
-    <article className={styles.container}>
+    <article className={advertItemClass}>
       <AdvertPhotos images={images} brand={brand} id={id} />
 
       <Link href={`/${brand}/${id}`}>

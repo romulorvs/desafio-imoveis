@@ -66,6 +66,7 @@
   > div {
     min-width: 100%;
     height: 100%;
+    @include shimmerLoader;
 
     div {
       width: 100%;

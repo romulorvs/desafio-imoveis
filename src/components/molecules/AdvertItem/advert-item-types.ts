@@ -9,4 +9,5 @@ export interface IAdvertItem {
     businessType: 'SALE' | 'RENTAL'
   }
   brand: 'zap' | 'vivareal'
+  loading?: boolean
 }

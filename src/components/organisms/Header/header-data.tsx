@@ -1,4 +1,4 @@
-import grupoZapSrc from '_assets/grupozap.png'
+import grupoZapSrc from '_assets/olx.svg'
 import zapSrc from '_assets/zap.svg'
 import vivarealSrc from '_assets/vivareal.svg'
 
@@ -8,7 +8,7 @@ export const headerLogoProps = {
     src: grupoZapSrc,
     alt: 'Logo Grupo Zap',
     width: 82,
-    height: 36,
+    height: 64,
   },
   zap: {
     href: '/zap',

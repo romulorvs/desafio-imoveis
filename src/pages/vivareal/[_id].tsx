@@ -1,21 +1,44 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
+
 import { useRouter } from 'next/router'
 
-import { Adverts, Details } from '_views'
+import { fetchIdPaths, fetchAdvertData } from 'src/helpers'
 
-function VivaRealDetails() {
-  const {
-    query: { _id },
-  } = useRouter()
+import { IDetails, Details } from '_views'
 
-  if (!_id) {
-    return <Adverts brand="vivareal" />
+function ZapDetails({ advertData }: Pick<IDetails, 'advertData'>) {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <Details brand="zap" />
   }
 
-  if (Array.isArray(_id)) {
-    return <Details brand="vivareal" _id={_id[0]} />
-  }
-
-  return <Details brand="vivareal" _id={_id} />
+  return <Details brand="zap" advertData={advertData} />
 }
 
-export default VivaRealDetails
+export const getStaticProps: GetStaticProps = async function (context) {
+  try {
+    // eslint-disable-next-line prettier/prettier
+    const advertData = await fetchAdvertData({ type: 'zap', _id: context.params?._id || '' })
+    return {
+      props: {
+        advertData,
+      },
+    }
+  } catch (error) {
+    return {
+      notFound: true,
+    }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async function () {
+  try {
+    const paths = await fetchIdPaths()
+    return { paths, fallback: false }
+  } catch (error) {
+    return { paths: [], fallback: true }
+  }
+}
+
+export default ZapDetails
