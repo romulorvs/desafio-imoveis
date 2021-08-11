@@ -6,14 +6,26 @@ import { fetchIdPaths, fetchAdvertData } from 'src/helpers'
 
 import { IDetails, Details } from '_views'
 
+import Head from '_components/next/head'
+
 function VivaRealDetails({ advertData }: Pick<IDetails, 'advertData'>) {
   const router = useRouter()
 
   if (router.isFallback) {
-    return <Details brand="zap" />
+    return (
+      <>
+        <Head />
+        <Details brand="zap" />
+      </>
+    )
   }
 
-  return <Details brand="vivareal" advertData={advertData} />
+  return (
+    <>
+      <Head />
+      <Details brand="vivareal" advertData={advertData} />
+    </>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async function (context) {

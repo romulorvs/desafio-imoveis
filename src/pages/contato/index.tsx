@@ -1,3 +1,14 @@
+import Head from '_components/next/head'
+
 import { Contact } from '_views'
 
-export default Contact
+function Component() {
+  return (
+    <>
+      <Head />
+      <Contact />
+    </>
+  )
+}
+
+export default Component

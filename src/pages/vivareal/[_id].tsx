@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
+import Head from '_components/next/head'
+
 import { useRouter } from 'next/router'
 
 import { fetchIdPaths, fetchAdvertData } from 'src/helpers'
@@ -10,10 +12,20 @@ function ZapDetails({ advertData }: Pick<IDetails, 'advertData'>) {
   const router = useRouter()
 
   if (router.isFallback) {
-    return <Details brand="zap" />
+    return (
+      <>
+        <Head />
+        <Details brand="zap" />
+      </>
+    )
   }
 
-  return <Details brand="zap" advertData={advertData} />
+  return (
+    <>
+      <Head />
+      <Details brand="zap" advertData={advertData} />
+    </>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async function (context) {
