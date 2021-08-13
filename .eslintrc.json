@@ -64,6 +64,7 @@
     "import/no-cycle": "off",
     "no-underscore-dangle": "off",
     "jsx-a11y/label-has-associated-control": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "react/jsx-filename-extension": [
       1,
       {
