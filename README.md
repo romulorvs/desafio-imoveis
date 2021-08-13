@@ -10,22 +10,17 @@ Este repositório é uma resposta ao **Desafio da OLX** para desenvolvedores **F
 
 ## Desktop
 
-<h5 align="center">
-  <img width='100%' alt="Desktop Thumb" title="#web" src=".github/desktop.png" />
-</h5>
+![Thumb Desktop](.github/desktop.png)
 
 ## Mobile
 
-<h5 align="center">
-  <img width='100%' alt="Mobile Thumb" title="#mobile" src=".github/mobile.png" />
-</h5>
-
+![Thumb Mobile](.github/mobile.png)
 
 ---
 
 ## Instalação
+*Você precisará ter o **Yarn** instalado no seu computador:*
 
-Você precisará ter o **Yarn** instalado no seu computador. Após instalá-lo:
 1. Instale o Yarn rodando ``npm install --global yarn`` no terminal.
 2. Clone este Repositório.
 3. Vá até o diretório do Repositório e rode ``yarn`` para instalar as dependências.
