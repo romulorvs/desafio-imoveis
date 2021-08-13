@@ -1,9 +1,11 @@
 import Head from 'next/head'
 
-function IndexPage() {
+import { IHead } from './head-types'
+
+function HeadPage({ title }: IHead) {
   return (
     <Head>
-      <title>Desafio OLX - Zap e VivaReal</title>
+      <title>{title || 'Desafio OLX - Zap e VivaReal'}</title>
 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
@@ -25,4 +27,4 @@ function IndexPage() {
   )
 }
 
-export default IndexPage
+export default HeadPage

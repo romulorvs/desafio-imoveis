@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio OLX
 
-## Getting Started
+---
 
-First, run the development server:
+Este repositório é uma resposta ao **Desafio da OLX** para desenvolvedores **Front-End**. A aplicação foi desenvolvida com React e Next.JS, utilizando Typescript;
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desktop
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<h5 align="center">
+  <img width='100%' alt="Desktop Thumb" title="#web" src=".github/desktop.png" />
+</h5>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+## Mobile
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<h5 align="center">
+  <img width='100%' alt="Mobile Thumb" title="#mobile" src=".github/mobile.png" />
+</h5>
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instalação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Você precisará ter o **Yarn** instalado no seu computador. Após instalá-lo:
+1. Instale o Yarn rodando ``npm install --global yarn`` no terminal.
+2. Clone este Repositório.
+3. Vá até o diretório do Repositório e rode ``yarn`` para instalar as dependências.
 
-## Deploy on Vercel
+#### Execução
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para executar a aplicação localmente:
+- Em modo de desenvolvimento, rode ``yarn dev``.
+- Em modo de produção, rode ``yarn server``.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Testes
+
+Para executar os testes:
+- Rode ``yarn test``.
+
+#### Deploy
+
+Para realizar o deploy da aplicação há um arquivo Dockerfile na raiz do repositório:
+1. Rode ``docker build`` para criar a imagem da aplicação.
+2. Envie a imagem para o seu orquestrador de container.
+3. Para rodar a aplicação conteinerizada, execute ``yarn start -p porta_do_app``.

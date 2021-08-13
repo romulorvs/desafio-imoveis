@@ -23,6 +23,7 @@ function Pagination({ value, onChange, totalPages }: IPagination) {
         type="button"
         disabled={value === 1 || undefined}
         onClick={handleLeftClick}
+        data-testid="subtract-btn"
       >
         {paginatearrowLeftSVG}
       </button>
@@ -33,6 +34,7 @@ function Pagination({ value, onChange, totalPages }: IPagination) {
         type="button"
         disabled={value === totalPages || undefined}
         onClick={handleRightClick}
+        data-testid="add-btn"
       >
         {paginatearrowRightSVG}
       </button>

@@ -1,12 +1,13 @@
-import Head from '_components/next/head'
+import Head from 'src/next/head'
 
-import { Contact } from '_views'
+import { Header, MainContact } from '_components'
 
 function Component() {
   return (
     <>
-      <Head />
-      <Contact />
+      <Head title="Contato - Desafio OLX - Zap e VivaReal" />
+      <Header />
+      <MainContact />
     </>
   )
 }

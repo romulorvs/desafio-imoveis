@@ -68,6 +68,7 @@ function AdvertPhotos({ images, brand, id }: IAdvertPhotos) {
         disabled={currentPhotoIndex === 0}
         type="button"
         onClick={handleLeftClick}
+        data-testid="arrow-left"
       >
         {arrowLeftSVG}
       </button>
@@ -91,11 +92,12 @@ function AdvertPhotos({ images, brand, id }: IAdvertPhotos) {
         disabled={currentPhotoIndex === images.length - 1}
         type="button"
         onClick={handleRightClick}
+        data-testid="arrow-right"
       >
         {arrowRightSVG}
       </button>
 
-      <div className={styles.index_dots}>
+      <div className={styles.index_dots} data-testid="index_dots">
         {images.map((src, index) => (
           <button
             key={src}

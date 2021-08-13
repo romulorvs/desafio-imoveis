@@ -15,6 +15,7 @@ function SelectBar({ value, list, onChange }: ISelectBar) {
           type="button"
           className={value === id ? styles.selected : undefined}
           onClick={() => handleSelectionButtonClick(id)}
+          data-testid={value === id ? 'selected' : undefined}
         >
           {label}
         </button>

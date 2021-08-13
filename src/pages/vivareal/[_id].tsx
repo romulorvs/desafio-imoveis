@@ -1,29 +1,58 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
-import Head from '_components/next/head'
-
 import { useRouter } from 'next/router'
+
+import Head from 'src/next/head'
+
+import { Header, MainDetails } from '_components'
 
 import { fetchIdPaths, fetchAdvertData } from 'src/helpers'
 
-import { IDetails, Details } from '_views'
+interface IDetails {
+  advertData: {
+    id: string
+    usableAreas: number
+    parkingSpaces: number
+    images: string[]
+    address: {
+      city: string
+      neighborhood: string
+      geoLocation: {
+        location: {
+          lon: number
+          lat: number
+        }
+      }
+    }
+    bathrooms: number
+    bedrooms: number
+    pricingInfos: {
+      yearlyIptu: string
+      price: string
+      rentalTotalPrice?: string
+      businessType: 'SALE' | 'RENTAL'
+      monthlyCondoFee: string
+    }
+  }
+}
 
-function ZapDetails({ advertData }: Pick<IDetails, 'advertData'>) {
+function VivaRealDetails({ advertData }: Pick<IDetails, 'advertData'>) {
   const router = useRouter()
 
   if (router.isFallback) {
     return (
       <>
-        <Head />
-        <Details brand="zap" />
+        <Head title="Detalhes do Imóvel - Desafio OLX" />
+        <Header brand="vivareal" />
       </>
     )
   }
 
   return (
     <>
-      <Head />
-      <Details brand="zap" advertData={advertData} />
+      <Head title="Detalhes do Imóvel - Desafio OLX" />
+      <Header brand="vivareal" />
+      <MainDetails {...advertData} />
     </>
   )
 }
@@ -31,7 +60,7 @@ function ZapDetails({ advertData }: Pick<IDetails, 'advertData'>) {
 export const getStaticProps: GetStaticProps = async function (context) {
   try {
     // eslint-disable-next-line prettier/prettier
-    const advertData = await fetchAdvertData({ type: 'zap', _id: context.params?._id || '' })
+    const advertData = await fetchAdvertData({ type: 'vivareal', _id: context.params?._id || '' })
     return {
       props: {
         advertData,
@@ -53,4 +82,4 @@ export const getStaticPaths: GetStaticPaths = async function () {
   }
 }
 
-export default ZapDetails
+export default VivaRealDetails

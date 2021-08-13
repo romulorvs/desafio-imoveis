@@ -1,12 +1,13 @@
-import Head from '_components/next/head'
+import Head from 'src/next/head'
 
-import { Home } from '_views'
+import { Header, MainHome } from '_components'
 
 export default function Component() {
   return (
     <>
       <Head />
-      <Home />
+      <Header />
+      <MainHome />
     </>
   )
 }

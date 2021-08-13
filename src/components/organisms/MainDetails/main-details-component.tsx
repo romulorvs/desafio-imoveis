@@ -30,7 +30,8 @@ function MainDetails({
       <div className={styles.inner_container}>
         <section className={styles.title}>
           <h2>
-            R$ {adPrice} {businessType === 'RENTAL' && <span>/ mês</span>}
+            R$ {adPrice}
+            {businessType === 'RENTAL' && <span> / mês</span>}
           </h2>
           <h1>
             Apartamento para {businessType === 'RENTAL' ? 'Aluguel' : 'Venda'}

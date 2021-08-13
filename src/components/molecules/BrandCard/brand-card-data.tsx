@@ -8,7 +8,10 @@ export const brandLogoProps = {
   zap: {
     logoSvg: ZapSVG,
     exampleImg: {
-      src: zapPicExample,
+      src:
+        process.env.NODE_ENV === 'test'
+          ? '/public/assets/zapexample.png'
+          : zapPicExample,
       alt: 'Imóvel de exemplo do Zap',
     },
     featureList: [
@@ -23,7 +26,11 @@ export const brandLogoProps = {
   vivareal: {
     logoSvg: VivaRealSVG,
     exampleImg: {
-      src: vivarealPicExample,
+      src:
+        process.env.NODE_ENV === 'test'
+          ? '/public/assets/vivarealexample.png'
+          : vivarealPicExample,
+
       alt: 'Imóvel de exemplo do Viva Real',
     },
     featureList: [

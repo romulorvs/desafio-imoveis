@@ -108,6 +108,7 @@ function Slider({ images }: ISlider) {
         type="button"
         disabled={disableLeftArrow}
         onClick={handleLeftClick}
+        data-testid="arrow-left"
       >
         {arrowLeftSVG}
       </button>
@@ -130,6 +131,7 @@ function Slider({ images }: ISlider) {
         type="button"
         disabled={disableRightArrow}
         onClick={handleRightClick}
+        data-testid="arrow-right"
       >
         {arrowRightSVG}
       </button>

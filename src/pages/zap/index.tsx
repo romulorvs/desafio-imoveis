@@ -1,12 +1,13 @@
-import { Adverts } from '_views'
+import { Header, MainAdverts } from '_components'
 
-import Head from '_components/next/head'
+import Head from 'src/next/head'
 
 function ZapAdverts() {
   return (
     <>
-      <Head />
-      <Adverts brand="zap" />
+      <Head title="Zap - Desafio OLX" />
+      <Header brand="zap" />
+      <MainAdverts brand="zap" />
     </>
   )
 }

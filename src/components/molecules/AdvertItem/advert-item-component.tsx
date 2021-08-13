@@ -36,7 +36,8 @@ function AdvertItem({
           </p>
 
           <p className={styles.price}>
-            R$ {adPrice} {businessType === 'RENTAL' && <span>/ mês</span>}
+            R$ {adPrice}
+            {businessType === 'RENTAL' && <span> / mês</span>}
           </p>
 
           <div className={styles.stats}>

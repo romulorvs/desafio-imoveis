@@ -6,14 +6,14 @@ function AdvertItemLoading() {
   return (
     <article className={styles.container}>
       <a className={styles.details}>
-        <p className={styles.title}>xxxxxx</p>
+        <p className={styles.title}>xxxxxxx</p>
 
         <p className={styles.price}>xxxxx</p>
 
         <div className={styles.stats}>
-          <Stat type="BEDROOMS" value={0} />
-          <Stat type="BATHROOMS" value={0} />
-          <Stat type="AREA" value={`${0} m²`} />
+          <Stat type="BEDROOMS" value="bed_text" />
+          <Stat type="BATHROOMS" value="bath_text" />
+          <Stat type="AREA" value="area_text" />
         </div>
       </a>
     </article>

@@ -1,5 +1,3 @@
-import { useCallback } from 'react'
-
 import Link from 'next/link'
 
 import { ImageLink } from '_components'
@@ -11,14 +9,13 @@ import { navLogoProps } from './nav-bar-data'
 import styles from './nav-bar.module.scss'
 
 function NavBar({ currentBrand }: INavBar) {
-  const getBrandLink = useCallback(() => {
-    if (!currentBrand) return null
+  const { href, src, alt, width, height, content } = currentBrand
+    ? navLogoProps[currentBrand]
+    : ({} as any)
 
-    const { href, src, alt, width, height, content } =
-      navLogoProps[currentBrand]
-
-    return (
-      <>
+  return (
+    <nav className={styles.container}>
+      {currentBrand && (
         <ImageLink
           href={href}
           src={src}
@@ -29,13 +26,7 @@ function NavBar({ currentBrand }: INavBar) {
         >
           <span>{content}</span>
         </ImageLink>
-      </>
-    )
-  }, [currentBrand])
-
-  return (
-    <nav className={styles.container}>
-      {getBrandLink()}
+      )}
       <Link href="/contato">
         <a>Contato</a>
       </Link>
