@@ -1,5 +1,7 @@
 # Desafio OLX
 
+👉 **Veja o App em funcionamento**: https://eng-zap-challenge-javascript-romulorvs.vercel.app/
+
 ---
 
 Este repositório é uma resposta ao **Desafio da OLX** para desenvolvedores **Front-End**. A aplicação foi desenvolvida com React e Next.JS, utilizando Typescript;
