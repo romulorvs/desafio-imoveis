@@ -7,8 +7,8 @@ export const navLogoProps = {
     href: '/vivareal',
     src:
       process.env.NODE_ENV === 'test'
-        ? '/public/assets/zaplogo.svg'
-        : zapLogoSrc,
+        ? '/public/assets/vivareallogo.svg'
+        : vivarealLogoSrc,
     alt: 'Logo Viva Real',
     width: 32,
     height: 25,
@@ -18,8 +18,8 @@ export const navLogoProps = {
     href: '/zap',
     src:
       process.env.NODE_ENV === 'test'
-        ? '/public/assets/vivareallogo.svg'
-        : vivarealLogoSrc,
+        ? '/public/assets/zaplogo.svg'
+        : zapLogoSrc,
     alt: 'Logo Zap',
     width: 32,
     height: 27,
