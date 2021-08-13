@@ -1,0 +1,23 @@
+/**
+ * IMPORTS
+ */
+ @import '../../../styles/mixins.scss';
+
+/**
+ * CONTENT
+ */
+
+.container {
+  display:inline-flex;
+  align-items: baseline;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #B5B5B5;
+
+  span {
+    margin-left: 6px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #373737;
+  }
+}
