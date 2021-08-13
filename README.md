@@ -28,18 +28,18 @@ Você precisará ter o **Yarn** instalado no seu computador. Após instalá-lo:
 2. Clone este Repositório.
 3. Vá até o diretório do Repositório e rode ``yarn`` para instalar as dependências.
 
-#### Execução
+## Execução
 
 Para executar a aplicação localmente:
 - Em modo de desenvolvimento, rode ``yarn dev``.
 - Em modo de produção, rode ``yarn server``.
 
-#### Testes
+## Testes
 
 Para executar os testes:
 - Rode ``yarn test``.
 
-#### Deploy
+## Deploy
 
 Para realizar o deploy da aplicação há um arquivo Dockerfile na raiz do repositório:
 1. Rode ``docker build`` para criar a imagem da aplicação.
