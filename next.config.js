@@ -15,5 +15,4 @@ module.exports = {
   images: {
     domains: ['grupozap-code-challenge.s3-website-us-east-1.amazonaws.com']
   },
-  distDir: 'build'
 }
